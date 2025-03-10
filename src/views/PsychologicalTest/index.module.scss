@@ -1,0 +1,117 @@
+.psyTest {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+    font-family:
+        MantouSans,
+        "Noto Sans TC",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        sans-serif;
+    color: #FFF;
+    background: linear-gradient(135deg, #D8B969 10%, #DEB555 90%);
+
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &::before {
+        background: radial-gradient(circle at 98% 2%, #D6D0A5, #D8D3AC00 80vmin);
+        // background-image: radial-gradient(circle at 40px 25px, #0250c5 , #bac8e0 3px, #bac8e0 40%, #6a85b6 60%);
+    }
+
+    &::after {
+        background: radial-gradient(circle at 7% 95%, #D6D0A5, #D8D3AC00 80vmin);
+    }
+
+    .content {
+        position: relative;
+        height: min(100vh, calc(1600vw/9));
+        width: min(100vw, calc(900vh/16));
+        background-color: #FDC961;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        &[data-section="0"] {
+            gap: 5%;
+        }
+
+        .outline {
+            position: absolute;
+            pointer-events: none;
+            width: 93.4%;
+            top: 3.3%;
+            left: 3.3%;
+        }
+
+        .lineBg {
+            position: absolute;
+            top: 0.75%;
+            left: 0;
+            height: 98.5%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .resultImg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+            opacity: 0;
+            transform: translateY(2rem);
+
+            &[data-show=true] {
+                opacity: 1;
+                transform: translateY(0);
+                transition: opacity 0.5s, transform 0.5s;
+            }
+        }
+
+        .backToHome {
+            position: absolute;
+            right: 5%;
+            bottom: 3%;
+            background-color: rgba($primary-900, 0.7);
+            padding: 0.25rem 1rem;
+            border-radius: 100vmax;
+            opacity: 0;
+            transform: translateY(2rem);
+
+            &[data-show=true] {
+                opacity: 1;
+                transform: translateY(0);
+                transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+            }
+        }
+    }
+}

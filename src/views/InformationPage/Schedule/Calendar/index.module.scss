@@ -1,0 +1,332 @@
+$block-height: 16rem;
+$block-width: 16rem;
+$wrap-block-width: calc(90vw - 5rem);
+
+.categoryBox {
+    padding-left: 5rem;
+    padding-right: 0.2rem;
+    padding-bottom: 1rem;
+    background-color: $primary-50;
+    position: sticky;
+    top: 9.5rem;
+    box-sizing: border-box;
+    z-index: 2;
+    width: calc(4.2rem + ($block-width + 1rem) * var(--pc));
+    max-width: 100%;
+    margin: auto;
+
+    @include width-not-enough($schedule-wrap-width) {
+        top: 4rem;
+        bottom: 0;
+        font-weight: 700;
+        width: calc(4.2rem + ($wrap-block-width + 1rem) * var(--pc));
+    }
+
+    .eventCategory {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        gap: 1rem;
+        overflow: hidden;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .eventNameGroup:has(.eventName) {
+            display: flex;
+            align-items: center;
+
+            @include width-not-enough($schedule-wrap-width) {
+                background-color: #DFDFFF;
+            }
+
+            .eventName {
+                width: $block-width;
+                text-align: center;
+
+                @include width-not-enough($schedule-wrap-width) {
+                    width: $wrap-block-width;
+                    line-height: 3rem;
+                }
+            }
+        }
+
+        .eventNameGroup:has(.eventTitle) {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            &[data-key="大學藍圖"] {
+                --bg: #FF5C0045;
+            }
+
+            &[data-key="升學指南"] {
+                --bg: #9CDAF745;
+            }
+            
+            &[data-key="科系博覽"] {
+                --bg: #FFEAA0CC;
+            }
+
+            >div {
+                flex: 1;
+            }
+
+            .eventTitle {
+                text-align: center;
+                background-color: var(--bg);
+                padding: 0.2rem 0;
+
+                @include width-not-enough($schedule-wrap-width) {
+                    display: none;
+                }
+            }
+
+            .subGroup {
+                display: flex;
+                gap: 1rem;
+
+                .subEventName {
+                    width: $block-width;
+                    text-align: center;
+                    text-wrap: nowrap;
+                    background-color: var(--bg);
+                    padding: 0.2rem 0;
+
+                    @include width-not-enough($schedule-wrap-width) {
+                        width: $wrap-block-width;
+                        line-height: 3rem;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        .eventNameGroup:last-child {
+            margin-right: 0.2rem;
+        }
+    }
+}
+
+.calendar {
+    position: relative;
+    width: calc(4.2rem + ($block-width + 1rem) * var(--pc));
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+
+    @include width-not-enough($schedule-wrap-width) {
+        padding-bottom: 6rem;
+        width: calc(4.2rem + ($wrap-block-width + 1rem) * var(--pc));
+    }
+
+    $content-width: calc(min(max(64rem, $nav-bar-width * 0.8),
+                min(90vw, $nav-bar-width)) - 5rem);
+
+    .time {
+        position: sticky;
+        display: block;
+        height: $block-height;
+        width: 4.8rem;
+        left: 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $primary-900;
+        background-color: $primary-50;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: $content-width;
+            height: 1px;
+            left: 5rem;
+            top: 1rem;
+            background-color: #BDA7A7;
+            z-index: -1;
+        }
+
+        &[data-last=true] {
+            height: 3rem;
+        }
+    }
+
+    .eventBlock {
+        position: absolute;
+        top: 0;
+        left: 5rem;
+        width: calc(100% - 5rem);
+        height: 100%;
+        overflow-x: auto;
+        box-sizing: border-box;
+
+        @include width-not-enough($schedule-wrap-width) {
+            scroll-snap-type: x mandatory;
+            scroll-padding-inline-start: -2rem;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0.3rem;
+            height: 0.3rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #8888;
+            transition: background-color 0.5s;
+            border-radius: 0.175rem;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        .events {
+            position: relative;
+            width: calc(($block-width + 1rem) * var(--pc) - 1rem);
+            margin-right: 0.2rem;
+            height: 100%;
+            display: flex;
+            gap: 1rem;
+
+            @include width-not-enough($schedule-wrap-width) {
+                width: calc(($wrap-block-width + 1rem) * var(--pc) - 1rem);
+            }
+
+            .snapElement {
+                width: $block-width;
+                pointer-events: none;
+
+                @include width-not-enough($schedule-wrap-width) {
+                    scroll-snap-align: start;
+                    width: $wrap-block-width;
+                }
+            }
+
+            .eventBox {
+                position: absolute;
+                top: calc($block-height * var(--y) + 1.45rem);
+                left: calc(($block-width + 1rem) * var(--x));
+                width: $block-width;
+                min-height: calc($block-height * var(--h) - 0.6rem);
+                display: flex;
+                flex-direction: column;
+                gap: 0.15rem;
+                background-color: #EFFFFF;
+                box-sizing: border-box;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                box-shadow: 0.2rem 0.2rem 0.3rem -0.2rem #000;
+                cursor: pointer;
+                transition: transform 0.3s;
+
+
+                @include width-not-enough($schedule-wrap-width) {
+                    left: calc(($wrap-block-width + 1rem) * var(--x));
+                    width: calc($wrap-block-width - 0.2rem);
+                }
+
+                &:hover {
+                    transform: translateY(-0.2rem)
+                }
+
+                .bookmark {
+                    display: block;
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 0.3rem;
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    outline: none;
+                    border: none;
+                    background-color: transparent;
+                    padding: 0;
+                    color: $primary-900;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        background-color: #8884;
+                    }
+
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        line-height: 2.25rem;
+                        transition: transform 0.3s;
+                    }
+
+                    &::before {
+                        content: "bookmark";
+                        transform: scale(0);
+                    }
+
+                    &::after {
+                        content: "bookmark_border";
+                        transform: scale(1);
+                    }
+                }
+
+                &[data-mark=true] .bookmark {
+                    &::before {
+                        transform: scale(1);
+                    }
+
+                    &::after {
+                        transform: scale(0);
+                    }
+                }
+
+                .projectName {
+                    font-size: 0.8rem;
+                    color: $primary-900;
+                    text-decoration: underline;
+                    margin: 0.25rem 0;
+                }
+
+                h3 {
+                    margin: 0;
+                    display: block;
+                    text-wrap: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 1rem;
+                }
+
+                .eventInfo {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 0.25rem 0.5rem;
+
+                    .pair {
+                        display: flex;
+                        gap: 0.25rem;
+                        align-items: center;
+
+                        span:last-child {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+
+                .signupIcon {
+                    position: sticky;
+                    left: 100%;
+                    top: 100%;
+                }
+            }
+        }
+    }
+}

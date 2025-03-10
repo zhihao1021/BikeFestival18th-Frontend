@@ -1,0 +1,26 @@
+.articleList {
+    .categoryList {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+
+        .category {
+            margin: 0;
+            transition: color 0.2s;
+            cursor: pointer;
+            user-select: none;
+
+            &[data-selected=true],
+            &:hover {
+                color: $primary-900;
+            }
+        }
+    }
+
+    .articles {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+        gap: 2rem min(4rem, 4%);
+    }
+}

@@ -1,0 +1,13 @@
+.listView {
+    width: 42rem;
+    max-width: 100%;
+    margin: auto;
+    min-height: calc(100vh - 24rem);
+    padding-bottom: 10vh;
+
+    .time {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $primary-900;
+    }
+}

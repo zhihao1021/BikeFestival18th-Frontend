@@ -1,0 +1,22 @@
+@mixin width-enough($width) {
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin width-not-enough($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin psy-phone {
+    @media screen and (max-aspect-ratio: 1080/1920 ){
+        @content;
+    }
+}
+
+@mixin home-scroll-snap() {
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
+}

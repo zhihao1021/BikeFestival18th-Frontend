@@ -1,0 +1,59 @@
+$wrap-width: 42rem;
+
+.aboutPage {
+    .background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        object-position: bottom;
+        height: 40vh;
+        width: 100%;
+    }
+
+    .box {
+        width: 64rem;
+        min-width: 80%;
+        max-width: min(100%, 90vw);
+        margin: auto;
+        margin-top: 32vh;
+
+        .block {
+            display: flex;
+            width: 100%;
+
+            @include width-not-enough($wrap-width) {
+                flex-direction: column;
+            }
+
+            h2 {
+                width: 10rem;
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            .context {
+                width: 0;
+                flex: 1;
+                margin-bottom: 3rem;
+
+                @include width-not-enough($wrap-width) {
+                    width: 100%;
+                }
+
+                h3 {
+                    color: $primary-900;
+                    margin: 0.8rem 0;
+                    margin-top: 2rem;
+                }
+            }
+        }
+
+        .members {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+}

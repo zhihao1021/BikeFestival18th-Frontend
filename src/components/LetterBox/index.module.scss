@@ -1,0 +1,43 @@
+.letterBox {
+    position: relative;
+    pointer-events: none;
+
+    svg {
+        cursor: pointer;
+        isolation: isolate;
+
+        >* {
+            pointer-events: initial;
+        }
+
+        path:last-child {
+            transition: transform 0.5s;
+        }
+
+        rect:last-of-type {
+            transition: transform 0.5s;
+        }
+    }
+
+    h2 {
+        font-size: 1rem;
+        position: absolute;
+        right: 10%;
+        bottom: 20%;
+        margin: 0;
+        color: #FFF;
+        pointer-events: initial;
+    }
+
+    &:hover svg {
+        path:last-child {
+            transform: rotateX(180deg);
+            z-index: -1;
+        }
+
+        rect:last-of-type {
+            transform: translateY(-13%);
+            z-index: 10;
+        }
+    }
+}

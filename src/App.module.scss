@@ -1,0 +1,31 @@
+.app {
+    min-height: 100vh;
+    width: $max-width;
+    margin: auto;
+
+    &[data-at-home=true] {
+        height: 100vh;
+        overflow-y: auto;
+        scroll-padding-top: 2rem;
+        scroll-snap-type: y mandatory;
+    }
+
+    :global(.page) {
+        padding-top: 6rem;
+        padding-bottom: 8rem;
+        min-height: 100vh;
+        max-width: $nav-bar-width;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    &[data-at-schedule=true] :global(.page) {
+        @include width-not-enough($schedule-wrap-width) {
+            padding-bottom: 0;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

@@ -1,0 +1,97 @@
+.category {
+    .box {
+        width: 64rem;
+        min-width: 80%;
+        max-width: 100%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem 3rem;
+
+        h1 {
+            width: 100%;
+        }
+
+        .block {
+            gap: 1.5rem;
+            width: calc(50% - 1.5rem);
+            transition:
+                opacity 0.3s,
+                transform 0.3s;
+
+            &:first-of-type {
+                width: 100%;
+                display: flex;
+
+                img {
+                    width: 35%;
+                }
+            }
+
+            img {
+                width: 100%;
+                aspect-ratio: 7/4;
+                object-fit: contain;
+                object-position: center;
+                background-size: contain;
+            }
+
+            h2 {
+                position: relative;
+                font-size: 1.5rem;
+                margin: 0.25rem 0;
+                width: fit-content;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: calc(100% - 2rem);
+                    height: 60%;
+                    top: 50%;
+                    left: 0.7rem;
+                    background-color: rgba($primary-900, 0.4);
+                    z-index: -1;
+                }
+            }
+
+            .context {
+                margin: 1rem 0;
+                font-size: 1.15rem;
+            }
+
+            @include width-not-enough(54rem) {
+                display: flex;
+                width: 100%;
+
+                img,
+                &:first-of-type img {
+                    width: 40%;
+                }
+            }
+
+            @include width-not-enough(42rem) {
+                flex-direction: column;
+
+                img,
+                &:first-of-type img {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include width-enough(48rem) {
+            &:has(.block:hover) {
+                .block {
+                    opacity: 50%;
+                }
+
+                .block:hover {
+                    opacity: 100%;
+                    transform: scale(1.02);
+                }
+            }
+        }
+
+    }
+
+}

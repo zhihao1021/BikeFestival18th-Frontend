@@ -1,0 +1,143 @@
+$wrap-1: 64rem;
+$wrap-2: 36rem;
+
+.souvenirBox {
+    --width: calc((100% - 4rem) / 3);
+    width: var(--width);
+    height: fit-content;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+
+    @include width-not-enough($wrap-1) {
+        --width: calc((100% - 2rem) / 2);
+    }
+
+    @include width-not-enough($wrap-2) {
+        --width: 100%;
+    }
+
+    h2 {
+        margin: 0.5rem 0;
+        text-align: center
+    }
+
+    .imageList {
+        position: relative;
+        overflow-x: hidden;
+        margin: 1rem 0;
+
+        .imageBox {
+            position: relative;
+            display: flex;
+            gap: 1rem;
+
+            &[data-mult=true] {
+                left: calc(min(0%, max((-1rem - 80%) * var(--index) + 10%, (-1rem - 80%) * (var(--len) - 1) + 20%)));
+                width: calc((80% + 1rem) * var(--len) - 1rem);
+
+                img {
+                    aspect-ratio: 8/6.3;
+                }
+            }
+            &[data-mult=false] {
+                left: 0;
+                width: 100%;
+
+                img {
+                    aspect-ratio: 8/5;
+                }
+            }
+
+
+            transition: left 0.3s;
+            padding-top: 0.2rem;
+
+            img {
+                flex: 1;
+                width: calc((100% + 1rem) / var(--len) - 1rem);
+                object-fit: cover;
+                object-position: center;
+                background-size: cover;
+                background-position: center;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: translateY(-0.2rem);
+                }
+            }
+        }
+
+    }
+
+    .imageIndex {
+        margin: 0.5rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 0.25rem;
+
+        button {
+            position: relative;
+            display: block;
+            background-color: #D8D8D8;
+            border: none;
+            width: 2rem;
+            height: 0.25rem;
+            border-radius: 0.125rem;
+            overflow: hidden;
+            transition: background-color 0.1s, transform 0.3s;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                border-radius: 0.125rem;
+                background-color: #BBBBBB;
+            }
+
+            &[data-selected=true]::before {
+                width: 100%;
+                transition: width linear 4.8s;
+            }
+
+            &:hover {
+                background-color: #BBBBBB;
+                transform: translateY(-0.05rem);
+            }
+        }
+    }
+
+    .description {
+        margin: 1rem 0;
+        font-size: min(0.9rem, 1.3vw);
+        margin: auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        white-space: pre-line;
+
+        @include width-not-enough($wrap-1) {
+            font-size: min(1rem, 1.95vw);
+        }
+
+        @include width-not-enough($wrap-2) {
+            font-size: 1rem;
+        }
+    }
+
+    .price {
+        color: $primary-900;
+        text-align: center;
+        margin: 0.5rem 0;
+
+        @include width-not-enough($wrap-2) {
+            font-size: 1.2rem;
+        }
+    }
+}

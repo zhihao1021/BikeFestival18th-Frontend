@@ -1,0 +1,53 @@
+.partners {
+    .box {
+        width: 64rem;
+        min-width: 80%;
+        max-width: min(100%, 90vw);
+        margin: auto;
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 2rem 0;
+
+            &:has(+.clickToSeeMore),
+            &:has(+.support) {
+                margin-bottom: 0.25rem;
+            }
+        }
+
+        *:has(+h1) {
+            margin-bottom: 5rem;
+        }
+
+        .clickToSeeMore,
+        .support {
+            display: block;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            color: #666;
+        }
+
+        .partnerList {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .devTeam {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: min(48rem, calc(90vw - 4rem));;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
+}

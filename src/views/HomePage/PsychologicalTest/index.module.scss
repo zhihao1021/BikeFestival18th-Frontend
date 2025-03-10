@@ -1,0 +1,72 @@
+$change-width: 52rem;
+
+.psycTest {
+    margin: 4rem 0;
+    padding-top: 2rem;
+    @include home-scroll-snap;
+
+    .box {
+        position: relative;
+        background-color: $primary-900;
+
+        @include width-enough($change-width) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @include width-not-enough($change-width) {
+            // min-height: 32rem;
+            height: calc(100vh - 4rem);
+            background-color: transparent;
+        }
+
+
+        img {
+            display: block;
+            width: calc(100% - 24rem);
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 2400/1662;
+
+            @include width-not-enough($change-width) {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .content {
+            width: 24rem;
+            box-sizing: border-box;
+            padding: 2.5rem;
+            padding-right: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+            color: $primary-50;
+            font-weight: 400;
+
+            @include width-not-enough($change-width) {
+                position: absolute;
+                top: 8%;
+                left: calc((100% - min(max(21rem, 85%), 95vw)) / 2);
+                backdrop-filter: blur(3px) brightness(40%);
+                width: min(max(21rem, 85%), 95vw);
+                height: 84%;
+                border-radius: 1rem;
+                justify-content: space-evenly;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                border: 0.15rem solid #FFF;
+                margin-left: auto;
+                background-color: $primary-700;
+                padding: 0.2rem 0.75rem;
+                border-radius: 100vmax;
+            }
+        }
+    }
+}

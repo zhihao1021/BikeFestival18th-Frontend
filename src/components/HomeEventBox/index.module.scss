@@ -1,0 +1,92 @@
+.homeEventBox {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 0.5rem;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: -10;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        height: calc(100% + 12px);
+        transition: width 0.3s, opacity 0.3s;
+        z-index: -1;
+    }
+
+    &::before {
+        width: 0;
+        backdrop-filter: blur(3px);
+    }
+
+    &::after {
+        width: calc(100% + 12px);
+        backdrop-filter: brightness(50%);
+        opacity: 0;
+    }
+
+
+    .content {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        isolation: isolate;
+        z-index: 2;
+
+        h3 {
+            font-size: 1.8rem;
+            color: #FFF;
+            margin: 0;
+            left: 1.5rem;
+            bottom: 1.5rem;
+            line-height: 2rem;
+        }
+
+        .mask {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s;
+
+            .context {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                color: #FFF;
+                max-width: 28em;
+            }
+        }
+    }
+
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+
+        &::before {
+            width: calc(100% + 12px);
+        }
+
+        .content .mask {
+            // height: calc(100% - 2rem);
+            height: calc(var(--height) + 0.5rem);
+        }
+    }
+}

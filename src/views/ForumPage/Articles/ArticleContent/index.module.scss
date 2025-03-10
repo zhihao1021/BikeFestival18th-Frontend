@@ -1,0 +1,122 @@
+.articleContent {
+    $article-wrap-width: 42rem;
+    max-width: 95%;
+    margin: auto;
+
+    .categoryLink {
+        transition: color 0.2s;
+        pointer-events: none;
+
+        &:hover {
+            color: $primary-900;
+        }
+
+        h2 {
+            pointer-events: initial;
+            width: fit-content;
+        }
+    }
+
+    .titleImg {
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .textBlock {
+        display: flex;
+        gap: min(8%, 8rem);
+        margin: 2rem 0;
+
+        @include width-not-enough($article-wrap-width) {
+            gap: 1rem;
+            flex-direction: column;
+        }
+
+        .info {
+            .infoBlock {
+                display: flex;
+                text-wrap: nowrap;
+                gap: 0.5rem;
+
+                @include width-not-enough($article-wrap-width) {
+                    color: $primary-900;
+                }
+
+                .author {
+                    color: $primary-900;
+                }
+            }
+        }
+    }
+
+    .imgList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        img {
+            cursor: pointer;
+            transition: transform 0.3s;
+
+            @include width-enough($article-wrap-width) {
+                width: calc((100% - 4.5rem) / 4);
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            @include width-not-enough($article-wrap-width) {
+                width: 100%;
+            }
+        }
+    }
+
+    h3 {
+        margin-top: 3rem;
+    }
+
+    .relateArticles {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        @include width-enough(52rem) {
+            >div {
+                width: calc(50% - 1rem);
+            }
+        }
+
+        @include width-not-enough(52rem) {
+            @include width-enough(36rem) {
+                flex-direction: column;
+
+                >div {
+                    width: 100%;
+                    display: flex;
+                    gap: 1.5rem;
+
+                    a:has(img) {
+                        flex: 2;
+                        display: block;
+                        width: 50%;
+                    }
+
+                    div {
+                        flex: 3;
+                        margin: 0;
+
+                        h2 {
+                            margin: 0.5rem 0;
+                        }
+                    }
+                }
+            }
+
+            @include width-not-enough(36rem) {
+                flex-direction: column;
+            }
+        }
+
+    }
+}

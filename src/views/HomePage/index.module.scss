@@ -1,0 +1,58 @@
+.line {
+    display: flex;
+    width: fit-content;
+    padding: 3rem 0;
+    margin: 0 auto;
+    align-items: center;
+    gap: min(2rem, 4vw);
+    font-size: min(1.5rem, 4.5vw);
+    font-weight: 700;
+    text-wrap: nowrap;
+
+    @include home-scroll-snap;
+
+    img {
+        height: min(8rem, 16vw);
+    }
+
+    a {
+        color: #FFF;
+        background-color: #06C755;
+        font-size: 0.8em;
+        padding: 0.5em 1.25em;
+        border-radius: 0.5rem;
+        transition: background-color 0.1s;
+
+        &:hover {
+            background-color: #00B745;
+        }
+    }
+}
+
+.bottom {
+    position: relative;
+    height: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: top;
+        z-index: -1;
+    }
+
+    h3 {
+        font-size: min(2.5rem, 6.5vw);
+        color: #FFF
+    }
+
+    @include home-scroll-snap;
+}

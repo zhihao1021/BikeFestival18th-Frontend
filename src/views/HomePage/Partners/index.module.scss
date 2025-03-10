@@ -1,0 +1,35 @@
+.partners {
+    padding: 3rem calc($max-width * 0.1);
+
+    @include home-scroll-snap;
+
+    .box {
+        width: 100%;
+
+        .title {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin: 1.25rem 0;
+
+            img {
+                height: 3rem;
+                width: 3rem;
+                object-fit: contain;
+            }
+
+            h2 {
+                text-wrap: nowrap;
+                font-size: 1.8rem;
+                margin: 0.8rem 0;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+    }
+}

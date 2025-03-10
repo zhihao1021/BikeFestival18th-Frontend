@@ -1,0 +1,157 @@
+[
+    {
+        "title": "關於單車節",
+        "href": "/about",
+        "options": []
+    },
+    {
+        "title": "參加資訊",
+        "href": "/info",
+        "options": [
+            {
+                "name": "交通資訊",
+                "href": "/info/traffic"
+            },
+            {
+                "name": "展場地圖",
+                "href": "/info/map"
+            },
+            {
+                "name": "行程表",
+                "href": "/info/schedule"
+            },
+            {
+                "name": "我的行程",
+                "href": "/info/my-schedule"
+            }
+        ]
+    },
+    {
+        "title": "主題活動",
+        "href": "/activity",
+        "options": [
+            {
+                "name": "主舞台〈航成〉",
+                "href": "/activity/main-stage"
+            },
+            {
+                "name": "科系博覽",
+                "href": "/activity/departments-expo",
+                "options": [
+                    {
+                        "name": "科系體驗坊",
+                        "href": "/activity/departments-expo/0"
+                    },
+                    {
+                        "name": "系館導覽",
+                        "href": "/activity/departments-expo/1"
+                    },
+                    {
+                        "name": "科系帳篷",
+                        "href": "/activity/departments-expo/2"
+                    }
+                ]
+            },
+            {
+                "name": "升學指南",
+                "href": "/activity/educational-guide",
+                "options": [
+                    {
+                        "name": "教授面試技巧演講",
+                        "href": "/activity/educational-guide/0"
+                    },
+                    {
+                        "name": "學習歷程特邀講座",
+                        "href": "/activity/educational-guide/1"
+                    },
+                    {
+                        "name": "成大人「成」實說",
+                        "href": "/activity/educational-guide/2"
+                    },
+                    {
+                        "name": "學習歷程指引-靜態展",
+                        "href": "/activity/educational-guide/3"
+                    }
+                ]
+            },
+            {
+                "name": "大學藍圖",
+                "href": "/activity/university-blueprint",
+                "options": [
+                    {
+                        "name": "大學生大膽說",
+                        "href": "/activity/university-blueprint/0"
+                    },
+                    {
+                        "name": "情境解謎",
+                        "href": "/activity/university-blueprint/1"
+                    },
+                    {
+                        "name": "校園論壇",
+                        "href": "/activity/university-blueprint/2"
+                    },
+                    {
+                        "name": "展版",
+                        "href": "/activity/university-blueprint/3"
+                    }
+                ]
+            },
+            {
+                "name": "人生岔路口",
+                "href": "/activity/life-corssroads"
+            },
+            {
+                "name": "沉浸式體驗",
+                "href": "/activity/immersive-experience"
+            },
+            {
+                "name": "渡光蝕憂",
+                "href": "/activity/crossing-the-light"
+            },
+            {
+                "name": "心靈茶軒",
+                "href": "/activity/tea-house"
+            },
+            {
+                "name": "告別前任永續市集",
+                "href": "/activity/sustainable-market"
+            },
+            {
+                "name": "拍貼機",
+                "href": "/activity/photo-sticker-machine"
+            },
+            {
+                "name": "心理測驗",
+                "href": "/psychological-test"
+            }
+        ]
+    },
+    {
+        "title": "知識論壇",
+        "href": "/forum",
+        "options": [
+            {
+                "name": "科系手冊",
+                "href": "/forum/departments"
+            },
+            {
+                "name": "專欄文章",
+                "href": "/forum/articles"
+            },
+            {
+                "name": "給高中生的一封信",
+                "href": "/forum/letters"
+            }
+        ]
+    },
+    {
+        "title": "合作夥伴",
+        "href": "/partners",
+        "options": []
+    },
+    {
+        "title": "紀念品小舖",
+        "href": "/souvenir",
+        "options": []
+    }
+]

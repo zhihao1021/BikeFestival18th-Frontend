@@ -1,0 +1,10 @@
+.noiseBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    filter: brightness(1.4);
+    background-color: rgba($primary-700, 0.15);
+    z-index: -1;
+}

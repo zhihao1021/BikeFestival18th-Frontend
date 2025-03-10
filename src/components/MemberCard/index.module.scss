@@ -1,0 +1,66 @@
+.memberCard {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: 0.1rem 0.1rem 0.3rem -0.15rem #000;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    backdrop-filter: brightness(0.99);
+    width: calc((100% - 4rem) / 3);
+    box-sizing: border-box;
+
+    @include width-not-enough(64rem) {
+        width: calc((100% - 2rem) / 2);
+    }
+
+    @include width-not-enough(48rem) {
+        width: 100%;
+    }
+
+    .imgBlock {
+        height: 5rem;
+        width: 5rem;
+        overflow: hidden;
+        position: relative;
+        border-radius: 50%;
+
+        img {
+            position: absolute;
+            height: 116%;
+            width: 116%;
+            top: -8%;
+            left: -8%;
+        }
+    }
+
+    .info {
+        width: 0;
+        flex: 1;
+
+        .title {
+            font-size: 0.8rem;
+            color: $primary-900;
+        }
+
+        .name {
+            font-weight: 700;
+        }
+
+        .tags {
+            font-size: 0.9rem;
+            margin: 0.1rem 0;
+        }
+        
+        .song {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.1rem;
+            font-size: 0.9rem;
+
+            :global(.ms) {
+                line-height: 1.5rem;
+            }
+        }
+    }
+}

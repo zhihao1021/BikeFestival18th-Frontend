@@ -1,0 +1,77 @@
+.souvenirs {
+    padding: 3rem calc($max-width * 0.1);
+
+    @include home-scroll-snap;
+
+    .box {
+        width: 100%;
+
+        .title {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin: 1.25rem 0;
+
+            img {
+                height: 3rem;
+                width: 3rem;
+                object-fit: contain;
+            }
+
+            h2 {
+                text-wrap: nowrap;
+                font-size: 1.8rem;
+                margin: 0.8rem 0;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: min(2rem, 2vw);
+
+            @include width-not-enough(86rem) {
+                gap: 2rem;
+            }
+
+            img {
+                width: calc((95% - min(6rem, 6vw)) / 4);
+                // height: fit-content;
+                aspect-ratio: 3/2;
+                border-radius: 1rem;
+                object-fit: cover;
+                object-position: center;
+                background-size: cover;
+                background-position: center;
+
+                @include width-not-enough(86rem) {
+                    width: calc((90% - 2rem) / 2);
+                }
+
+                @include width-not-enough(36rem) {
+                    width: 90%;
+                }
+            }
+        }
+
+        .seeMore {
+            margin-top: 2rem;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.2rem 0.7rem;
+            border: 0.12rem solid #000;
+            border-radius: 100vmax;
+            width: fit-content;
+            font-weight: 700;
+            transition: transform 0.1s;
+
+            &:hover {
+                transform: translateY(-0.1rem);
+            }
+        }
+    }
+}

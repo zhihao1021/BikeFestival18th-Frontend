@@ -1,0 +1,194 @@
+.dropDownMenu {
+    position: relative;
+    text-wrap: nowrap;
+
+    :global(.ms) {
+        font-weight: bold;
+        font-size: 1.25em;
+    }
+
+    @include width-enough($navbar-max-width) {
+        height: 1.8em;
+        width: calc(var(--text-count) * 1em);
+        padding: 0 0.25em;
+        color: inherit;
+        transition: color 0.3s;
+    }
+
+    @include width-not-enough($navbar-max-width) {
+        width: 100%;
+        color: #FFF;
+        font-size: 1.25rem;
+        padding-left: 1.5em;
+        box-sizing: border-box;
+    }
+
+    .titleBox {
+        display: flex;
+        gap: 0.5em;
+
+        @include width-enough($navbar-max-width) {
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @include width-not-enough($navbar-max-width) {
+            padding: 0.25rem 0;
+            margin-top: 1em;
+            font-weight: 700;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .icon {
+            cursor: pointer;
+            transition: transform 0.35s;
+
+            @include width-enough($navbar-max-width) {
+                transform: rotate(0);
+            }
+
+            @include width-not-enough($navbar-max-width) {
+                transform: rotate(-90deg);
+            }
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+    .mask {
+        transition: height 0.3s;
+        pointer-events: none;
+        overflow: hidden;
+
+        @include width-enough($navbar-max-width) {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 0;
+            width: 100%;
+
+            box-sizing: border-box;
+            font-size: 0.9em;
+
+            &:has(.mask) {
+                width: 200%;
+            }
+        }
+
+        @include width-not-enough($navbar-max-width) {
+            position: relative;
+            font-size: 0.8em;
+            height: 0;
+        }
+
+        .options {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @include width-enough($navbar-max-width) {
+                display: flex;
+                width: 100%;
+                margin: 0.5em 0;
+                flex-direction: column;
+                text-align: center;
+                background-color: $primary-900;
+                border-radius: 0.3rem;
+
+                &:has(.mask) {
+                    width: 50%;
+                }
+            }
+
+            @include width-not-enough($navbar-max-width) {
+                width: fit-content;
+            }
+
+            .option {
+                position: relative;
+                color: #FFF;
+                transition: color 0.1s, background-color 0.1s;
+
+                .mask {     
+                    top: 0;
+                    left: 100%;
+                    height: 0;
+                    transition: none;
+
+                    .options {
+                        margin: 0;
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                    }
+                }
+
+                @include width-enough($navbar-max-width) {
+                    padding: 0.25em 0;
+                    height: 2.2em;
+                    line-height: 1.7em;
+                    box-sizing: border-box;
+
+                    &:hover {
+                        color: $primary-900;
+                        background-color: #FFF;
+
+                        .mask {
+                            height: calc(2.2em * var(--option-count) + 1em);
+                            z-index: 11;
+                        }
+                    }
+                }
+
+                @include width-not-enough($navbar-max-width) {
+                    display: block;
+                    padding: 0.2em 1.5em 0.2em 0.75em;
+                    height: 2em;
+                    margin: 1em 0;
+                    border-radius: 0.3em;
+                    box-sizing: border-box;
+
+                    &:hover {
+                        color: $context;
+                        background-color: #FFF;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include width-enough($navbar-max-width) {
+    .dropDownMenu:hover {
+        .titleBox {
+            .icon {
+                transform: rotate(180deg);
+            }
+        }
+
+        .mask {
+            pointer-events: initial;
+            height: calc(2.2em * var(--option-count) + 1em);
+        }
+    }
+}
+
+@include width-not-enough($navbar-max-width) {
+    .dropDownMenu:has(input:checked) {
+        .titleBox {
+            .icon {
+                transform: rotate(0deg);
+            }
+        }
+
+        .mask {
+            pointer-events: initial;
+            height: calc(3em * var(--option-count));
+        }
+    }
+}

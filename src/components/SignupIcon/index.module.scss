@@ -1,0 +1,26 @@
+.signupIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+    gap: 0.25em;
+    width: 5.5em;
+    padding: 0.15em 0.6em;
+    border: 0.1em solid;
+    border-radius: 100vmax;
+
+    &[data-status="0"] {
+        color: $primary-900;
+        border-color: $primary-900;
+    }
+
+    &[data-status="1"] {
+        color: #26A300;
+        border-color: #26A300;
+    }
+
+    &[data-status="2"] {
+        color: #888888;
+        border-color: #888888;
+    }
+}

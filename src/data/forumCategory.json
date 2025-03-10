@@ -1,0 +1,20 @@
+[
+    {
+        "imageURL": "/forum/DepartmentHandbook.webp",
+        "title": "科系手冊",
+        "description": "收錄成功大學所有院系之概覽、課程、特色介紹、迷思破解，以及 108 課綱相關解說。",
+        "href": "/forum/departments"
+    },
+    {
+        "imageURL": "/forum/FeaturedArticles.webp",
+        "title": "專欄文章",
+        "description": "從自學小撇步、大學攻略、超實用技能、考試備戰到生活小知識（懂生活），收攬著我們的多元主題的專欄文章。",
+        "href": "/forum/articles"
+    },
+    {
+        "imageURL": "/forum/LetterToHighSchoolStudents.webp",
+        "title": "給高中生的一封信",
+        "description": "透過在職人士及畢業校友分享現職工作情況、所需技能，以及十年間心路歷程，讓對產業、未來職涯感到迷茫的高中生有所啟發。",
+        "href": "/forum/letters"
+    }
+]

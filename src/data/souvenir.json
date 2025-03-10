@@ -1,0 +1,102 @@
+[
+    {
+        "name": "徽章",
+        "price": "$80",
+        "description": "設計形象由代表著成大單車節的齒輪望出去，希望能透過單車節，看見未來的方向！",
+        "imageURL": [
+            "/souvenir/badge/0.webp",
+            "/souvenir/badge/1.webp"
+        ]
+    },
+    {
+        "name": "鑰匙圈",
+        "price": "$65",
+        "description": "以明亮的主色調以及簡潔的幾何圖形，結合齒輪、轉軸等元素，拼湊出「NCKU」單車節的理想意象！",
+        "imageURL": [
+            "/souvenir/keychain/0.webp",
+            "/souvenir/keychain/1.webp",
+            "/souvenir/keychain/2.webp",
+            "/souvenir/keychain/3.webp"
+        ]
+    },
+    {
+        "name": "御守",
+        "price": "$120",
+        "description": "閃耀青春路，齒輪轉未來——學業御守，陪你衝刺夢想之巔！",
+        "imageURL": [
+            "/souvenir/amulet/0.webp",
+            "/souvenir/amulet/1.webp"
+        ]
+    },
+    {
+        "name": "杯套",
+        "price": "$55",
+        "description": "“乘風破浪，勇敢追夢！挑戰自我，突破極限，讓每一次努力都成為通往成功腳步！”",
+        "imageURL": [
+            "/souvenir/cup-sleeve/0.webp",
+            "/souvenir/cup-sleeve/1.webp"
+        ]
+    },
+    {
+        "name": "筆袋",
+        "price": "$120",
+        "description": "以星辰為主題，象徵我們的興趣和科系如同夜空中的繁星，等待被探索。希望透過這設計，陪伴大家在追夢的路上找到屬於自己的光芒。",
+        "imageURL": [
+            "/souvenir/pencil-case/0.webp",
+            "/souvenir/pencil-case/1.webp",
+            "/souvenir/pencil-case/2.webp"
+        ]
+    },
+    {
+        "name": "A4 帆布袋",
+        "price": "$180",
+        "description": "用吉祥物騎著腳踏車的形象，加上背景延伸的道路，象徵迷茫懵懂的自己找到方向，堅定邁向未來。",
+        "imageURL": [
+            "/souvenir/canvas-bag/0.webp",
+            "/souvenir/canvas-bag/1.webp"
+        ]
+    },
+    {
+        "name": "書籤",
+        "price": "$25",
+        "description": "直觀使用“單車節”的字面形象和今年的主題顏色配合，希望高中生們能透過活動得到更大的”視野“！",
+        "imageURL": [
+            "/souvenir/bookmarks/0.webp",
+            "/souvenir/bookmarks/1.webp"
+        ]
+    },
+    {
+        "name": "A4 L夾",
+        "price": "$40",
+        "description": "",
+        "imageURL": [
+            "/souvenir/l-folder/0.webp",
+            "/souvenir/l-folder/1.webp",
+            "/souvenir/l-folder/2.webp"
+        ]
+    },
+    {
+        "name": "帽T",
+        "price": "$700",
+        "description": "以「三角人」為設計理念，結合不同動作所組合而成的「NCKU」，有著獨特的視覺意象，為欲加入成大帶來滿滿的希望。",
+        "imageURL": [
+            "/souvenir/hat-T/0.webp",
+            "/souvenir/hat-T/1.webp",
+            "/souvenir/hat-T/2.webp",
+            "/souvenir/hat-T/3.webp",
+            "/souvenir/hat-T/4.webp"
+        ]
+    },
+    {
+        "name": "短T",
+        "price": "$300",
+        "description": "設計形象由代表著成大單車節的齒輪望出去，希望能透過單車節，看見未來的方向！",
+        "imageURL": [
+            "/souvenir/short-t-shirt/0.webp",
+            "/souvenir/short-t-shirt/1.webp",
+            "/souvenir/short-t-shirt/2.webp",
+            "/souvenir/short-t-shirt/3.webp",
+            "/souvenir/short-t-shirt/4.webp"
+        ]
+    }
+]

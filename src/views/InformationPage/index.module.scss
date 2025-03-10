@@ -1,0 +1,41 @@
+.informationPage {
+    .box {
+        width: 64rem;
+        min-width: 80%;
+        max-width: min(100%, 90vw);
+        margin: auto;
+
+        .selections {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: stretch;
+
+            .subPageGroup {
+                display: flex;
+                gap: inherit;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.35rem 0;
+                width: 8em;
+                color: $sec-context;
+                font-weight: 700;
+                border-radius: 100vmax;
+                transition: color 0.2s, background-color 0.2s;
+                text-wrap: nowrap;
+                box-sizing: border-box;
+
+                &[data-selected=true],
+                &:hover {
+                    color: #FFF;
+                    background-color: $primary-900;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.articleData {
+    @include width-enough(48rem) {
+        width: calc(50% - min(2rem, 2%));
+
+        &:has(img:hover) {
+            img {
+                box-shadow: 0 0 0.3rem -0.1rem #000;
+                transform: scale(1.05);
+            }
+
+            .detail {
+                opacity: 35%;
+            }
+        }
+    }
+
+    @include width-not-enough(48rem) {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.3rem -0.1rem #0000;
+        transition:
+            transform 0.3s,
+            box-shadow 0.3s;
+    }
+
+    .detail {
+        margin: 1rem;
+        transition: opacity 0.3s;
+
+        .categoryName {
+            color: $primary-900;
+        }
+    }
+}
